@@ -224,7 +224,7 @@ class SmtpHealthCheck(object):
                 self._wrap_ssl()
             banner = self._get_banner()
             self._check_banner(banner)
-        except Exception as exc:
+        except Exception:
             exc_type, exc_value, exc_tb = sys.exc_info()
             self.results['Exception-Type'] = str(exc_type.__name__)
             self.results['Exception-Value'] = str(exc_value)
